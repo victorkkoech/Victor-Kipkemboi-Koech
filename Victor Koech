@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#6366f1',
+secondary: '#8b5cf6'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html { scroll-behavior: smooth; }
+.skill-bar { transition: width 1s ease-in-out; }
+/* Hover effects */
+.hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.hover-scale { transition: transform 0.3s ease; }
+.hover-scale:hover { transform: scale(1.02); }
+.hover-glow { transition: box-shadow 0.3s ease; }
+.hover-glow:hover { box-shadow: 0 0 20px rgba(99, 102, 241, 0.2); }
+/* Smooth transitions */
+.smooth-transition { transition: all 0.3s ease-in-out; }
+/* Button hover animation */
+.btn-hover-effect {
+position: relative;
+overflow: hidden;
+}
+.btn-hover-effect:before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.3),
+transparent
+);
+transition: 0.5s;
+}
+.btn-hover-effect:hover:before {
+left: 100%;
+}
+/* Input focus effect */
+.input-focus-effect {
+transition: border-color 0.3s ease;
+border: 2px solid transparent;
+}
+.input-focus-effect:focus {
+border-color: #6366f1;
+box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+/* Card hover effects */
+.card-hover-effect {
+transition: all 0.3s ease;
+}
+.card-hover-effect:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+/* Icon hover animation */
+.icon-hover-spin {
+transition: transform 0.3s ease;
+}
+.icon-hover-spin:hover {
+transform: rotate(360deg);
+}
+/* Progress bar animation */
+@keyframes progressAnimation {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+.animated-progress {
+background: linear-gradient(90deg, #6366f1, #8b5cf6);
+background-size: 200% 100%;
+animation: progressAnimation 2s ease infinite;
+}
+/* Image hover zoom effect */
+.img-hover-zoom {
+overflow: hidden;
+}
+.img-hover-zoom img {
+transition: transform 0.5s ease;
+}
+.img-hover-zoom:hover img {
+transform: scale(1.1);
+}
+/* Text gradient animation */
+.text-gradient {
+background: linear-gradient(90deg, #6366f1, #8b5cf6);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-size: 200% 100%;
+animation: progressAnimation 3s ease infinite;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<nav class="fixed w-full bg-white shadow-sm z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="hidden md:flex items-center space-x-8">
+<a href="#home" class="text-gray-700 hover:text-primary">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary">About</a>
+<a href="#projects" class="text-gray-700 hover:text-primary">Projects</a>
+<a href="#services" class="text-gray-700 hover:text-primary">Services</a>
+<a href="#testimonials" class="text-gray-700 hover:text-primary">Testimonials</a>
+<a href="#contact" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<section id="home" class="min-h-screen relative overflow-hidden" style="background-image: url('https://public.readdy.ai/ai/img_res/209e434ce349f0985d22f2edbf9e47a1.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30"></div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-screen">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-bold text-gray-900 mb-6">Creative Digital Solutions for Modern Businesses</h1>
+<p class="text-xl text-gray-600 mb-8">Transforming ideas into exceptional digital experiences through innovative design and development solutions.</p>
+<a href="#contact" class="inline-flex items-center bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90">
+Get Started
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<section id="about" class="py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900">About Me</h2>
+<p class="mt-4 text-lg text-gray-600">Passionate about creating beautiful and functional digital experiences</p>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<img src="https://i.imgur.com/KcFVTYi.jpg" alt="Profile" class="rounded-lg shadow-lg w-full object-cover">
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Hi, I'm Victor Koech</h3>
+<p class="text-gray-600 mb-6">I'm a passionate full-stack developer, blockchain expert, and cybersecurity specialist with 2 years of professional experience. I specialize in creating secure, scalable, and efficient digital solutions through innovative technologies.</p>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Web Development</span>
+<span class="text-gray-600">90%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="skill-bar h-full bg-primary rounded-full animated-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Blockchain & Smart Contracts</span>
+<span class="text-gray-600">85%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="skill-bar h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">Cybersecurity</span>
+<span class="text-gray-600">88%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="skill-bar h-full bg-primary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-gray-700">AI & Data Analysis</span>
+<span class="text-gray-600">82%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="skill-bar h-full bg-primary rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<div class="mt-6">
+<h4 class="text-lg font-semibold text-gray-900 mb-3">Certifications</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JavaScript Algorithms and Data Structures – freeCodeCamp</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Responsive Web Design – freeCodeCamp</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Ethical Hacking – Cisco</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="projects" class="py-24 bg-gradient-to-br from-violet-50 to-purple-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gradient">Featured Projects</h2>
+<p class="mt-4 text-lg text-gray-600">Explore some of my recent work</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="img-hover-zoom">
+<img src="https://public.readdy.ai/ai/img_res/d4a86e47fff9d166757020340af06ab5.jpg" alt="Crypto Exchange" class="w-full h-48 object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Crypto Exchange Platform</h3>
+<p class="text-gray-600 mb-4">A secure and high-performance cryptocurrency exchange with advanced trading features and real-time market data.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">React</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">WebSocket</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Solidity</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<i class="ri-bitcoin-fill text-[#F7931A]"></i>
+<i class="ri-ethereum-fill text-[#627EEA]"></i>
+<i class="ri-binance-fill text-[#F3BA2F]"></i>
+</div>
+<button class="text-primary hover:text-opacity-80 inline-flex items-center cursor-pointer">
+View Project
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<img src="https://public.readdy.ai/ai/img_res/944f1473eec8b497cabe23a09b250c04.jpg" alt="Blockchain Network" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Decentralized Network</h3>
+<p class="text-gray-600 mb-4">A scalable blockchain network with smart contract capabilities and cross-chain interoperability features.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Solidity</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Rust</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Web3.js</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-sm text-gray-600">Supporting:</span>
+<i class="ri-nft-fill text-purple-500"></i>
+<i class="ri-coins-fill text-yellow-500"></i>
+<i class="ri-exchange-fill text-blue-500"></i>
+</div>
+<button class="text-primary hover:text-opacity-80 inline-flex items-center cursor-pointer">
+View Project
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<img src="https://public.readdy.ai/ai/img_res/9655a372b3ef26724837ad30b684c9bc.jpg" alt="DeFi Platform" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">DeFi Platform</h3>
+<p class="text-gray-600 mb-4">A comprehensive DeFi platform offering yield farming, liquidity mining, and cross-chain asset management.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">React</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Solidity</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">TheGraph</span>
+</div>
+<div class="flex flex-wrap gap-4 mb-4">
+<div class="flex items-center">
+<i class="ri-coins-fill text-yellow-500 mr-1"></i>
+<span class="text-sm text-gray-600">APY: 12.5%</span>
+</div>
+<div class="flex items-center">
+<i class="ri-wallet-3-fill text-green-500 mr-1"></i>
+<span class="text-sm text-gray-600">TVL: $15.2M</span>
+</div>
+</div>
+<button class="text-primary hover:text-opacity-80 inline-flex items-center cursor-pointer">
+View Project
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<img src="https://public.readdy.ai/ai/img_res/cb1f5be82c4aa4307a54b446d737c667.jpg" alt="E-commerce Platform" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">E-commerce Platform</h3>
+<p class="text-gray-600 mb-4">A feature-rich online shopping platform with advanced product management and seamless payment integration.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Next.js</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Node.js</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">MongoDB</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<i class="ri-shopping-cart-fill text-blue-500"></i>
+<i class="ri-bank-card-fill text-green-500"></i>
+<i class="ri-truck-fill text-yellow-500"></i>
+</div>
+<button class="text-primary hover:text-opacity-80 inline-flex items-center cursor-pointer">
+View Project
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<img src="https://public.readdy.ai/ai/img_res/a69e19654f0a8ca0bc3f4d298fe20d9a.jpg" alt="Smart Home System" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Smart Home System</h3>
+<p class="text-gray-600 mb-4">An IoT-based smart home automation system with AI-powered device control and energy management.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Python</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">TensorFlow</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">MQTT</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<i class="ri-home-smile-fill text-indigo-500"></i>
+<i class="ri-lightbulb-fill text-yellow-500"></i>
+<i class="ri-temp-hot-fill text-red-500"></i>
+</div>
+<button class="text-primary hover:text-opacity-80 inline-flex items-center cursor-pointer">
+View Project
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<img src="https://public.readdy.ai/ai/img_res/4072b223fa4a0c13d35ea2c673f99921.jpg" alt="Security Platform" class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Security Platform</h3>
+<p class="text-gray-600 mb-4">A comprehensive cybersecurity platform with real-time threat detection and automated incident response.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Python</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">ElasticSearch</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Kibana</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<i class="ri-shield-check-fill text-green-500"></i>
+<i class="ri-radar-fill text-blue-500"></i>
+<i class="ri-lock-fill text-red-500"></i>
+</div>
+<button class="text-primary hover:text-opacity-80 inline-flex items-center cursor-pointer">
+View Project
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="services" class="py-24 bg-gradient-to-br from-pink-50 to-rose-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900">Services</h2>
+<p class="mt-4 text-lg text-gray-600">Comprehensive solutions for your digital needs</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="p-6 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 icon-hover-spin">
+<i class="ri-layout-4-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2">UI/UX Design</h3>
+<p class="text-gray-600">Creating intuitive and engaging user experiences through thoughtful design and interaction.</p>
+</div>
+<div class="p-6 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 icon-hover-spin">
+<i class="ri-code-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Web Development</h3>
+<p class="text-gray-600">Building responsive and performant web applications using modern technologies.</p>
+</div>
+<div class="p-6 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 icon-hover-spin">
+<i class="ri-smartphone-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Mobile Development</h3>
+<p class="text-gray-600">Developing cross-platform mobile applications with native-like performance.</p>
+</div>
+<div class="p-6 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 icon-hover-spin">
+<i class="ri-bit-coin-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Blockchain Technology</h3>
+<p class="text-gray-600">Developing smart contracts, DApps and blockchain solutions for modern businesses.</p>
+</div>
+<div class="p-6 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 icon-hover-spin">
+<i class="ri-shield-keyhole-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Cyber Security</h3>
+<p class="text-gray-600">Providing comprehensive security solutions to protect your digital assets and infrastructure.</p>
+</div>
+<div class="p-6 bg-white/80 backdrop-blur-sm rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 icon-hover-spin">
+<i class="ri-robot-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Task Automation</h3>
+<p class="text-gray-600">Streamlining business processes through intelligent automation solutions and custom scripts.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="testimonials" class="py-24 bg-gradient-to-br from-cyan-50 to-teal-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900">Client Testimonials</h2>
+<p class="mt-4 text-lg text-gray-600">What our clients say about us</p>
+<div class="mt-8 flex justify-center space-x-2">
+<button class="px-4 py-2 !rounded-full bg-primary text-white testimonial-filter active" data-filter="all">All</button>
+<button class="px-4 py-2 !rounded-full bg-gray-200 hover:bg-gray-300 testimonial-filter" data-filter="web">Web Development</button>
+<button class="px-4 py-2 !rounded-full bg-gray-200 hover:bg-gray-300 testimonial-filter" data-filter="mobile">Mobile Apps</button>
+<button class="px-4 py-2 !rounded-full bg-gray-200 hover:bg-gray-300 testimonial-filter" data-filter="design">UI/UX Design</button>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-8" id="testimonials-grid">
+<div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 testimonial-card" data-category="web">
+<div class="flex items-center mb-4">
+<img src="https://public.readdy.ai/ai/img_res/3338a7956c97caeda1fa8234c0beada8.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-bold text-gray-900">Michael Thompson</h4>
+<p class="text-gray-600 text-sm">CEO, Tech Solutions Inc</p>
+</div>
+</div>
+<p class="text-gray-600">"Working with Victor was an absolute pleasure. His attention to detail and creative solutions helped us achieve our goals ahead of schedule. The web platform he developed exceeded our expectations."</p>
+<div class="mt-4 flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-2 text-sm text-gray-600">5.0</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm testimonial-card" data-category="mobile">
+<div class="flex items-center mb-4">
+<img src="https://public.readdy.ai/ai/img_res/60dedcd50f96a8b76ed939e0c0fbf3a3.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-bold text-gray-900">Emily Rodriguez</h4>
+<p class="text-gray-600 text-sm">Marketing Director, Brand Co</p>
+</div>
+</div>
+<p class="text-gray-600">"The mobile app Victor developed for us has significantly improved our online presence and sales conversion rates. His expertise in mobile development is truly remarkable."</p>
+<div class="mt-4 flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-2 text-sm text-gray-600">4.5</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm testimonial-card" data-category="design">
+<div class="flex items-center mb-4">
+<img src="https://public.readdy.ai/ai/img_res/e79f23397e2babfcfd55c6a2d3d216ec.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-bold text-gray-900">David Chen</h4>
+<p class="text-gray-600 text-sm">Founder, Startup Hub</p>
+</div>
+</div>
+<p class="text-gray-600">"Victor's UI/UX design skills are exceptional. He transformed our complex application into an intuitive and beautiful interface that our users love."</p>
+<div class="mt-4 flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-2 text-sm text-gray-600">5.0</span>
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 testimonial-card" data-category="web">
+<div class="flex items-center mb-4">
+<img src="https://public.readdy.ai/ai/img_res/842a97326ab26c27e433a9de3c6b60b5.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-bold text-gray-900">Sarah Wilson</h4>
+<p class="text-gray-600 text-sm">Tech Lead, Innovation Labs</p>
+</div>
+</div>
+<p class="text-gray-600">"The web application Victor built for us is both powerful and user-friendly. His technical expertise and problem-solving skills are impressive."</p>
+<div class="mt-4 flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-2 text-sm text-gray-600">4.5</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm testimonial-card" data-category="mobile">
+<div class="flex items-center mb-4">
+<img src="https://public.readdy.ai/ai/img_res/89dbd40ae2beed392080fc18c24ce557.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-bold text-gray-900">James Anderson</h4>
+<p class="text-gray-600 text-sm">Product Manager, MobileFirst</p>
+</div>
+</div>
+<p class="text-gray-600">"Victor delivered an outstanding mobile application that perfectly matched our vision. His attention to performance and user experience is exceptional."</p>
+<div class="mt-4 flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-2 text-sm text-gray-600">5.0</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm testimonial-card" data-category="design">
+<div class="flex items-center mb-4">
+<img src="https://public.readdy.ai/ai/img_res/5d51723462bb92b120dbeab330ce5752.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-bold text-gray-900">Lisa Martinez</h4>
+<p class="text-gray-600 text-sm">Creative Director, Design Studio</p>
+</div>
+</div>
+<p class="text-gray-600">"Working with Victor on our design system was fantastic. He brought fresh ideas and maintained consistency across all our digital products."</p>
+<div class="mt-4 flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-2 text-sm text-gray-600">4.5</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const filters = document.querySelectorAll('.testimonial-filter');
+const cards = document.querySelectorAll('.testimonial-card');
+filters.forEach(filter => {
+filter.addEventListener('click', function() {
+const category = this.dataset.filter;
+filters.forEach(f => f.classList.remove('bg-primary', 'text-white'));
+this.classList.add('bg-primary', 'text-white');
+cards.forEach(card => {
+if (category === 'all' || card.dataset.category === category) {
+card.style.display = 'block';
+setTimeout(() => {
+card.style.opacity = '1';
+card.style.transform = 'translateY(0)';
+}, 50);
+} else {
+card.style.opacity = '0';
+card.style.transform = 'translateY(20px)';
+setTimeout(() => {
+card.style.display = 'none';
+}, 300);
+}
+});
+});
+});
+});
+</script>
+<style>
+.testimonial-card {
+transition: all 0.3s ease;
+}
+</style>
+<section id="contact" class="py-24 bg-gradient-to-br from-amber-50 to-orange-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900">Get in Touch</h2>
+<p class="mt-4 text-lg text-gray-600">Let's discuss your next project</p>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<form id="contactForm" class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+<input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md input-focus-effect">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+<input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+<textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button btn-hover-effect">Send Message</button>
+</form>
+</div>
+<div>
+<div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300">
+<h3 class="text-xl font-bold text-gray-900 mb-4">Contact Information</h3>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<p class="ml-4 text-gray-600">Nairobi, Kenya</p>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<p class="ml-4 text-gray-600">+254742006589</p>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<p class="ml-4 text-gray-600">victorkoech996@gmail.com</p>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-medium text-gray-900 mb-4">Follow Me</h4>
+<div class="flex space-x-4">
+<a href="https://x.com/vicki_hood72?s=09" target="_blank" class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg hover:bg-primary/20">
+<i class="ri-twitter-line text-primary"></i>
+</a>
+<a href="https://www.linkedin.com/in/victor-koech-17a0a3279" target="_blank" class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg hover:bg-primary/20">
+<i class="ri-linkedin-line text-primary"></i>
+</a>
+<a href="https://github.com/victorkkoech" target="_blank" class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg hover:bg-primary/20">
+<i class="ri-github-line text-primary"></i>
+</a>
+<a href="https://www.facebook.com/share/16UJVRMH3f/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg hover:bg-primary/20">
+<i class="ri-facebook-line text-primary"></i>
+</a>
+<a href="https://www.instagram.com/vicki_hood_?igsh=eGYzNjZvNDhoODJ1" target="_blank" class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg hover:bg-primary/20">
+<i class="ri-instagram-line text-primary"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white">logo</a>
+<p class="mt-4 text-gray-400">Creating exceptional digital experiences through innovative design and development solutions.</p>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+<li><a href="#projects" class="text-gray-400 hover:text-white">Projects</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">UI/UX Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Web Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Mobile Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Blockchain Technology</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Cyber Security</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Task Automation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Newsletter</h4>
+<p class="text-gray-400 mb-4">Subscribe to our newsletter for updates and insights.</p>
+<form class="flex">
+<input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900">
+<button type="submit" class="bg-primary px-4 py-2 rounded-r-lg hover:bg-opacity-90">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center">
+<p class="text-gray-400">&copy; 2025 All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(this);
+const data = Object.fromEntries(formData);
+const notification = document.createElement('div');
+notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform transition-transform duration-300';
+notification.textContent = 'Message sent successfully!';
+document.body.appendChild(notification);
+setTimeout(() => {
+notification.remove();
+}, 3000);
+this.reset();
+});
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('opacity-100', 'translate-y-0');
+}
+});
+}, {
+threshold: 0.1
+});
+document.querySelectorAll('section').forEach(section => {
+section.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700');
+observer.observe(section);
+});
+window.addEventListener('scroll', () => {
+const nav = document.querySelector('nav');
+if (window.scrollY > 0) {
+nav.classList.add('shadow');
+} else {
+nav.classList.remove('shadow');
+}
+});
+</script>
+</body>
+</html>

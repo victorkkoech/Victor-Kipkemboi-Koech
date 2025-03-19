@@ -315,7 +315,7 @@ box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between h-16">
 <div class="flex items-center">
-<span class="text-2xl font-['Pacifico'] text-primary">Victor</span>
+<span class="text-2xl font-['Pacifico'] text-primary hover:text-white transition-all duration-300">Victor</span>
 </div>
 <div class="hidden md:flex items-center space-x-8">
 <a href="#home" class="text-gray-600 hover:text-primary nav-link-hover">Home</a>
@@ -352,13 +352,13 @@ Hi, I'm <span class="text-primary">Victor Koech</span>
 Transforming ideas into powerful digital solutions through innovative Full-Stack Development, Blockchain Engineering, and Cybersecurity expertise.
 </p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-<button class="w-full sm:w-auto px-12 py-4 bg-primary text-white !rounded-button hover:bg-opacity-90 transform hover:scale-105 transition-all group">
+<button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full sm:w-auto px-12 py-4 bg-primary text-white !rounded-button hover:bg-opacity-90 transform hover:scale-105 transition-all group">
 <span class="flex items-center justify-center">
 Get Started
 <i class="ri-arrow-right-line ml-2 transform group-hover:translate-x-1 transition-transform"></i>
 </span>
 </button>
-<button class="w-full sm:w-auto px-12 py-4 border-2 border-primary text-primary !rounded-button hover:bg-primary hover:text-white transform hover:scale-105 transition-all">
+<button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})" class="w-full sm:w-auto px-12 py-4 border-2 border-primary text-primary !rounded-button hover:bg-primary hover:text-white transform hover:scale-105 transition-all">
 View Portfolio
 </button>
 <button onclick="window.open('https://docs.google.com/document/d/15cq9COJjqLPsYKNnNE2YAEBQ9dJz72QY/edit?usp=drivesdk&ouid=103857785839102984140&rtpof=true&sd=true')" class="w-full sm:w-auto px-12 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white !rounded-button hover:opacity-90 transform hover:scale-105 transition-all flex items-center justify-center shadow-lg">
@@ -1036,7 +1036,7 @@ mobileMenu.className = 'mobile-menu fixed inset-y-0 right-0 w-full sm:w-80 bg-wh
 mobileMenu.innerHTML = `
 <div class="h-full p-6 flex flex-col">
 <div class="flex items-center justify-between mb-8">
-<span class="text-2xl font-['Pacifico'] text-primary">Victor</span>
+<span class="text-2xl font-['Pacifico'] text-primary hover:text-white transition-all duration-300">Victor</span>
 </div>
 <div class="flex flex-col space-y-6">
 <a href="#home" class="nav-item flex items-center text-gray-600 hover:text-primary py-2">
@@ -1137,6 +1137,39 @@ const icon = item.querySelector('i');
 icon.classList.remove('scale-125');
 });
 });
+});
+<script>
+// Counter Animation
+function animateCounter(counter) {
+  const target = parseInt(counter.getAttribute('data-target'));
+  const duration = 2000; // Animation duration in milliseconds
+  const steps = 50; // Number of steps in the animation
+  const stepValue = target / steps;
+  let current = 0;
+  
+  const timer = setInterval(() => {
+    current += stepValue;
+    if (current >= target) {
+      counter.textContent = target;
+      clearInterval(timer);
+    } else {
+      counter.textContent = Math.round(current);
+    }
+  }, duration / steps);
+}
+// Observe counters and trigger animation when they become visible
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.5
+});
+document.querySelectorAll('.counter').forEach(counter => {
+  counterObserver.observe(counter);
 });
 </script>
 </body>

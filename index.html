@@ -361,6 +361,14 @@ Get Started
 <button class="w-full sm:w-auto px-12 py-4 border-2 border-primary text-primary !rounded-button hover:bg-primary hover:text-white transform hover:scale-105 transition-all">
 View Portfolio
 </button>
+<button onclick="window.open('resume.pdf')" class="w-full sm:w-auto px-12 py-4 bg-white text-primary !rounded-button hover:bg-gray-50 transform hover:scale-105 transition-all flex items-center justify-center">
+<i class="ri-file-text-line mr-2"></i>
+View Resume
+</button>
+<button onclick="window.open('recommendation.pdf')" class="w-full sm:w-auto px-12 py-4 bg-white text-primary !rounded-button hover:bg-gray-50 transform hover:scale-105 transition-all flex items-center justify-center">
+<i class="ri-award-line mr-2"></i>
+View Recommendation
+</button>
 </div>
 </div>
 <div class="relative max-w-2xl mx-auto">
@@ -402,32 +410,189 @@ class="rounded-2xl shadow-lg w-full">
 <p class="text-gray-600 mb-8">
 With over 8 years of experience in software development, I specialize in building scalable web applications, blockchain solutions, and implementing robust security measures. Based in Nairobi, Kenya, I've worked with clients globally to deliver innovative digital solutions.
 </p>
-<div class="space-y-6">
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium">Web Development</span>
-<span>90%</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4">
+<i class="ri-code-s-slash-line text-2xl text-primary"></i>
 </div>
-<div class="h-2 bg-gray-200 rounded-full">
-<div class="h-2 bg-primary rounded-full skill-bar" style="width: 90%"></div>
+<h3 class="text-xl font-bold">Frontend Development</h3>
+</div>
+<div class="space-y-4">
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-html5-line mr-2 text-orange-500"></i>
+<span>HTML5/CSS3</span>
+</div>
+<span class="text-sm text-gray-500">95%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-orange-500 rounded-full skill-bar transition-all duration-1000" style="width: 95%"></div>
 </div>
 </div>
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium">Blockchain</span>
-<span>85%</span>
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-javascript-line mr-2 text-yellow-500"></i>
+<span>JavaScript/React</span>
 </div>
-<div class="h-2 bg-gray-200 rounded-full">
-<div class="h-2 bg-primary rounded-full skill-bar" style="width: 85%"></div>
+<span class="text-sm text-gray-500">90%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-yellow-500 rounded-full skill-bar transition-all duration-1000" style="width: 90%"></div>
 </div>
 </div>
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium">Cybersecurity</span>
-<span>88%</span>
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-responsive-line mr-2 text-blue-500"></i>
+<span>Responsive Design</span>
 </div>
-<div class="h-2 bg-gray-200 rounded-full">
-<div class="h-2 bg-primary rounded-full skill-bar" style="width: 88%"></div>
+<span class="text-sm text-gray-500">92%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-blue-500 rounded-full skill-bar transition-all duration-1000" style="width: 92%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full mr-4">
+<i class="ri-server-line text-2xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-bold">Backend Development</h3>
+</div>
+<div class="space-y-4">
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-nodejs-line mr-2 text-green-600"></i>
+<span>Node.js/Express</span>
+</div>
+<span class="text-sm text-gray-500">88%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-green-600 rounded-full skill-bar transition-all duration-1000" style="width: 88%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-database-2-line mr-2 text-blue-600"></i>
+<span>Supabase/SQL</span>
+</div>
+<span class="text-sm text-gray-500">85%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-blue-600 rounded-full skill-bar transition-all duration-1000" style="width: 85%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-cloud-line mr-2 text-purple-600"></i>
+<span>Cloud Services</span>
+</div>
+<span class="text-sm text-gray-500">82%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-purple-600 rounded-full skill-bar transition-all duration-1000" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full mr-4">
+<i class="ri-blockchain-line text-2xl text-purple-600"></i>
+</div>
+<h3 class="text-xl font-bold">Blockchain Development</h3>
+</div>
+<div class="space-y-4">
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-coin-line mr-2 text-yellow-600"></i>
+<span>Web3.js/Solidity</span>
+</div>
+<span class="text-sm text-gray-500">90%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-yellow-600 rounded-full skill-bar transition-all duration-1000" style="width: 90%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-exchange-line mr-2 text-blue-600"></i>
+<span>DeFi/DEX</span>
+</div>
+<span class="text-sm text-gray-500">85%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-blue-600 rounded-full skill-bar transition-all duration-1000" style="width: 85%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-wallet-3-line mr-2 text-green-600"></i>
+<span>Crypto Wallets</span>
+</div>
+<span class="text-sm text-gray-500">88%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-green-600 rounded-full skill-bar transition-all duration-1000" style="width: 88%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-full mr-4">
+<i class="ri-shield-keyhole-line text-2xl text-red-600"></i>
+</div>
+<h3 class="text-xl font-bold">Cybersecurity</h3>
+</div>
+<div class="space-y-4">
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-lock-password-line mr-2 text-red-600"></i>
+<span>Ethical Hacking</span>
+</div>
+<span class="text-sm text-gray-500">92%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-red-600 rounded-full skill-bar transition-all duration-1000" style="width: 92%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-bug-line mr-2 text-orange-600"></i>
+<span>Penetration Testing</span>
+</div>
+<span class="text-sm text-gray-500">88%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-orange-600 rounded-full skill-bar transition-all duration-1000" style="width: 88%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-code-box-line mr-2 text-purple-600"></i>
+<span>Security Automation</span>
+</div>
+<span class="text-sm text-gray-500">85%</span>
+</div>
+<div class="h-2 bg-gray-100 rounded-full">
+<div class="h-2 bg-purple-600 rounded-full skill-bar transition-all duration-1000" style="width: 85%"></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -503,22 +668,37 @@ class="w-full h-48 object-cover">
 <div class="w-12 h-12 flex items-center justify-center mb-4">
 <i class="ri-code-line text-3xl text-primary"></i>
 </div>
-<h3 class="text-xl font-bold mb-3">Web Development</h3>
-<p class="text-gray-300">Custom web applications built with modern technologies and best practices.</p>
+<h3 class="text-xl font-bold mb-3">Secure Web Development</h3>
+<p class="text-gray-600">Custom web applications with integrated security features and modern best practices.</p>
+<ul class="mt-4 space-y-2 text-gray-600">
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>SDLC Implementation</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>Agile Development</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>CI/CD Integration</li>
+</ul>
 </div>
 <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
 <div class="w-12 h-12 flex items-center justify-center mb-4">
 <i class="ri-blockchain-line text-3xl text-primary"></i>
 </div>
 <h3 class="text-xl font-bold mb-3">Blockchain Solutions</h3>
-<p class="text-gray-300">Smart contract development and blockchain integration services.</p>
+<p class="text-gray-600">End-to-end blockchain development and integration services.</p>
+<ul class="mt-4 space-y-2 text-gray-600">
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>Smart Contract Development</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>Crypto Exchange Development</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>Wallet Integration</li>
+</ul>
 </div>
 <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
 <div class="w-12 h-12 flex items-center justify-center mb-4">
 <i class="ri-shield-check-line text-3xl text-primary"></i>
 </div>
-<h3 class="text-xl font-bold mb-3">Cybersecurity</h3>
-<p class="text-gray-300">Security audits, penetration testing, and vulnerability assessments.</p>
+<h3 class="text-xl font-bold mb-3">Cybersecurity & Automation</h3>
+<p class="text-gray-600">Comprehensive security services with AI-powered automation.</p>
+<ul class="mt-4 space-y-2 text-gray-600">
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>Penetration Testing</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>Security Automation</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line mr-2 text-primary"></i>AI Integration</li>
+</ul>
 </div>
 </div>
 </div>
@@ -805,7 +985,8 @@ const texts = [
 'Full-Stack Developer 👨‍💻',
 'Blockchain Engineer ⛓️',
 'Cybersecurity Specialist 🛡️',
-'AI Enthusiast 🤖'
+'SDLC Expert 🔄',
+'AI Automation Expert 🤖'
 ];
 let textIndex = 0;
 let charIndex = 0;
@@ -931,12 +1112,30 @@ const skillBars = document.querySelectorAll('.skill-bar');
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
-entry.target.style.width = entry.target.parentElement.getAttribute('data-progress');
+const width = entry.target.style.width;
+entry.target.style.width = '0';
+setTimeout(() => {
+entry.target.style.width = width;
+}, 100);
 }
 });
+}, {
+threshold: 0.1
 });
 skillBars.forEach(bar => {
 observer.observe(bar);
+});
+// Add hover effects to skill items
+document.querySelectorAll('.skill-item').forEach(item => {
+item.addEventListener('mouseenter', () => {
+const icon = item.querySelector('i');
+icon.classList.add('scale-125');
+icon.style.transition = 'transform 0.3s ease';
+});
+item.addEventListener('mouseleave', () => {
+const icon = item.querySelector('i');
+icon.classList.remove('scale-125');
+});
 });
 });
 </script>

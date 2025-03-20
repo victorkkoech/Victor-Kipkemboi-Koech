@@ -21,6 +21,6 @@ I'm a passionate **Full-Stack Developer, Blockchain Engineer, and Cybersecurity 
 - 💼 **Fiverr:** [Victor Koech]
 - 🐦 **Twitter:** [@vickihood72](#)
 - 📧 **Email:** victorkoeck996@gmail.com
-- 🌐 **Portfolio:** [https://victorkkoech.github.io/portfolio./]
+- 🌐 **Portfolio:** https://victorkkoech.github.io/Victor-Kipkemboi-Koech/
 
 🚀 Let's build the future together!
